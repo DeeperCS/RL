@@ -26,7 +26,7 @@ class SampleAverage:
             # obtain reward with noise
             reward_record[s] = self.rewards[action] + np.random.normal(0, 1, 1)
 
-            # updating the action value for action choosen
+            # updating the action value for action choosen (Incremental implementation)
             self.q_values[action] = self.q_values[action] + (1.0/(self.counts[action]+1))*(self.rewards[action] - self.q_values[action])
             
             # count ++
